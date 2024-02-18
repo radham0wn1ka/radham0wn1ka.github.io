@@ -26,12 +26,12 @@ date:   2024-02-01 09:29:20 +0700
 categories: jekyll website
 usemathjax: true
 ---
-run 
-```bundle exec jekyll serve
+```
+```
+bundle exec jekyll serve
 ```
 git push the code ,we see the changes
 <br/>
 <!-- go to site/about/index.html to edit the home page
 unminify the html code and write your own -->
 
-```

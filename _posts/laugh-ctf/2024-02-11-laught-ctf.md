@@ -2,7 +2,7 @@
 layout: post
 title:  "laugh ctf"
 date:   2024-02-11 09:29:20 +0700
-categories: python ctf
+categories: laugh ctf
 usemathjax: true
 ---
 ## challenge
