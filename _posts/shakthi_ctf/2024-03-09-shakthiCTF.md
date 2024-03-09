@@ -9,8 +9,9 @@ usemathjax: true
 ![image](https://github.com/m0wn1ka/ctf_writeups/assets/127676379/75167fd6-b177-4f2a-9a75-cd0d7f816ea5)
 # scoreboard
 ![image](https://github.com/m0wn1ka/ctf_writeups/assets/127676379/8b0c7cb4-6cbd-4383-83e1-5d421a9752c8)
-# sovled challenges
-![image](https://github.com/m0wn1ka/ctf_writeups/assets/127676379/de63fab4-4242-4b5d-b22f-fd88ecba7066)
+
+## soved challenges
+![image](https://github.com/m0wn1ka/ctf_writeups/assets/127676379/e3303cf3-7f22-49c3-9653-18c4fe4319dc)
 ## web/delicious
 - the description
 ![image](https://github.com/m0wn1ka/ctf_writeups/assets/127676379/63ece15d-a997-4162-880f-7f1d190b8157)
