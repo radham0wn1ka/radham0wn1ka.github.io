@@ -9,7 +9,8 @@ I am student of rguktn IIIt nuzvid.I am pursuing computer science as my major.I 
 
 **to contact ✨**
 
-- [linkdin](https://www.linkedin.com/in/radha-mounika-74a5322b0)
+<!-- - [linkdin](https://www.linkedin.com/in/radha-mounika-74a5322b0) -->
+- [Linkdin](https://www.linkedin.com/in/radha-mounika-bb97091a7)
 - [github](https://github.com/m0wn1ka)
 - [portfolio](https://m0wn1ka.github.io)
 - [twitter](https://x.com/m0w1n1k1?t=oKGNrl_xHVvGRecRb18Ehg&s=09)
