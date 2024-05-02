@@ -98,6 +98,7 @@ C:\home\radha\todo_list> git branch
   main
 C:\home\radha\todo_list> 
 ```
+- git switch
 - git switch -c is for creating new branch
 `git switch [<options>] (-c|-C) <new-branch> [<start-point>]`
 - git switch branch_name_to_switch
@@ -107,7 +108,106 @@ C:\home\radha\todo_list>
     create a new branch named <branch>, referencing <start-point>, which may be specified any way you like, including using a branch name or a tag name.
  - git switch 
  - The git switch command normally expects a branch head, but will also accept an arbitrary commit when invoked with --detach; for example, you can check out the commit referenced by a tag
- - swithc to a specifi commit without cretign a new branch for that`git switch --detach c`
+ - swithc to a specifi commit without cretign a new branch for that
+ `git switch --detach c`
  ### toread
- - (link1)[https://git-scm.com/docs/user-manual]
- - (link2)[https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources]
+ - [link1](https://git-scm.com/docs/user-manual)
+ - [link2](https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources)
+- git reset branch_name
+- from a remote branch to create a local branch we use  `git switch -c my_local_new_branch origin/exiiting_branch`
+- "origin" is just the name that Git uses by default to refer to the repository that you cloned from
+```
+Branches, remote-tracking branches, and tags are all references to commits. All references are named with a slash-separated path name starting with refs; the names we’ve been using so far are actually shorthand:
+    The branch test is short for refs/heads/test.
+    The tag v2.6.18 is short for refs/tags/v2.6.18.
+    origin/master is short for refs/remotes/origin/master
+```
+### git remote add origin
+```
+The git remote add command takes two arguments:
+    A remote name, for example, origin
+    A remote URL, for example, https://github.com/OWNER/REPOSITORY.git
+$ git remote add origin https://github.com/OWNER/REPOSITORY.git
+# Set a new remote
+$ git remote -v
+# Verify new remote
+> origin  https://github.com/OWNER/REPOSITORY.git (fetch)
+> origin  https://github.com/OWNER/REPOSITORY.git (push)
+```
+### git remote set-url
+- The git remote set-url command changes an existing remote repository URL.
+```
+The git remote set-url command takes two arguments:
+    An existing remote name. For example, origin or upstream are two common choices.
+$ git remote -v
+> origin  git@github.com:OWNER/REPOSITORY.git (fetch)
+> origin  git@github.com:OWNER/REPOSITORY.git (push)
+git remote set-url origin https://github.com/OWNER/REPOSITORY.git
+$ git remote -v
+# Verify new remote URL
+> origin  https://github.com/OWNER/REPOSITORY.git (fetch)
+> origin  https://github.com/OWNER/REPOSITORY.git (push)
+Use the git remote rename command to rename an existing remote.
+The git remote rename command takes two arguments:
+    An existing remote name, for example, origin
+    A new name for the remote, for example, destinat
+```
+### git remote rm
+```
+$ git remote -v
+# View current remotes
+> origin  https://github.com/OWNER/REPOSITORY.git (fetch)
+> origin  https://github.com/OWNER/REPOSITORY.git (push)
+> destination  https://github.com/FORKER/REPOSITORY.git (fetch)
+> destination  https://github.com/FORKER/REPOSITORY.git (push)
+$ git remote rm destination
+# Remove remote
+$ git remote -v
+# Verify it's gone
+> origin  https://github.com/OWNER/REPOSITORY.git (fetch)
+> origin  https://github.com/OWNER/REPOSITORY.git (push)
+Note: git remote rm does not delete the remote repository from the server. It simply removes the remote and its references from your local repository.
+```
+- [ref](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories)
+### fetch -merge
+```
+These commands are very useful when interacting with a remote repository. clone and fetch download remote code from a repository's remote URL to your local computer, merge is used to merge different people's work together with yours, and pull is a combination of fetch and merge
+```
+### git clone
+```
+When you run git clone, the following actions occur:
+    A new folder called repo is made
+    It is initialized as a Git repository
+    A remote named origin is created, pointing to the URL you cloned from
+    All of the repository's files and commits are downloaded there
+    The default branch is checked out
+```
+- git fetch origin :to fetch the origin content
+- get merge main(the branch with what we want to merge the remote) origin/main(it is origin`/`main only )
+- by these all files in the local which are not in remote are as well preserverd and new files which are in remote but not in local are downloaded
+- but when coming to the point of modifications the remote repos modifications of a file will take precedence
+### git pull
+- to do the same(fetch and merge) in git pull for divergetn branches it says a lot
+```
+\home\radha\todo_list> git pull origin main
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 936 bytes | 936.00 KiB/s, done.
+From https://github.com/m0wn1ka/todo_list_private
+ branch            main       -> FETCH_HEAD
+   ee1b46a..5c8d7f6  main       -> origin/main
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+```
+- [toread](https://git-scm.com/docs/user-manual)
