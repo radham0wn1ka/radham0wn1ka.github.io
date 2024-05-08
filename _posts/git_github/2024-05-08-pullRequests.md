@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "git github"
+title:  "git github collaboration"
 date:   2024-05-08 09:29:20 +0700
 categories: git github pull requests
 usemathjax: true
