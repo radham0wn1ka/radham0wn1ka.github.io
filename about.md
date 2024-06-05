@@ -16,5 +16,5 @@ I am student of rguktn IIIt nuzvid.I am pursuing computer science as my major.I 
 - [twitter](https://x.com/m0w1n1k1?t=oKGNrl_xHVvGRecRb18Ehg&s=09)
 <!-- - [resume](https://drive.google.com/file/d/18s9ln_kb4wiy3sjVZFCj7TntbHViIYIe/view?usp=sharing) -->
 <!-- - [resume](https://drive.google.com/file/d/1cxvchFldB9UxPOPtExAP9Jxk8ncbHEHF/view?usp=sharing) -->
-- [resume](https://drive.google.com/file/d/1LdH2EGxx-alscxrGU6oMW2_zhYZMFniX/view?usp=sharing)
+- [resume](https://drive.google.com/file/d/1F6ZumKNnVN0AFhiUb7uViykvqlbyYK2i/view?usp=sharing)
 - [ctftime](https://ctftime.org/team/229140/)
