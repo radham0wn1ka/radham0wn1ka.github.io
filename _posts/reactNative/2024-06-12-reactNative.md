@@ -40,7 +40,6 @@ import BigButton from './BigButton';
 ```
 Container.js # picked up by webpack, Rollup or any other Web bundler
 Container.native.js # picked up by the React Native bundler for both Android and iOS (Metro)
-
 import Container from './Container';
 ```
 - Pro tip: Configure your Web bundler to ignore .native.js extensions in order to avoid having unused code in your production bundle, thus reducing the final bundle size.
@@ -77,3 +76,21 @@ justifyContent describes how to align children within the main axis of their con
     space-evenly Evenly distribute children within the alignment container along the main axis. The spacing between each pair of adjacent items, the main-start edge and the first item, and the main-end edge and the last item, are all exactly the same.
 ```
 - align items align self
+- `sudo update-alternatives --config x-www-browser`
+### storage
+- Async Storage is a community-maintained module for React Native that provides an asynchronous, unencrypted, key-value store. Async Storage is not shared between apps: every app has its own sandbox environment and has no access to data from other apps.
+- https://reactnative.dev/docs/security
+- Async Storage is the React Native equivalent of Local Storage from the web
+- deep linking. Deep linking is a way of sending data directly to a native application from an outside source. A deep link looks like app:// where app is your app scheme and anything following the // could be used internally to handle the request.
+- A library to consider for native OAuth is react-native-app-auth.
+## to read
+- https://reactnative.dev/docs/security
+## normal
+- Headless JS is a way to run tasks in JavaScript while your app is in the background. It can be used, for example, to sync fresh data, handle push notifications, or play music.
+- `https://reactnative.dev/docs/permissionsandroid`
+## imp
+- https://reactnative.dev/docs/components-and-apis
+- npx create-expo-app my-app2 --template blank: with this we get jsx
+## links
+- https://docs.expo.dev/get-started/start-developing/
+- https://docs.expo.dev/tutorial/build-a-screen/

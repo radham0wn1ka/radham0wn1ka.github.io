@@ -211,3 +211,70 @@ hint: invocation.
 fatal: Need to specify how to reconcile divergent branches.
 ```
 - [toread](https://git-scm.com/docs/user-manual)
+## git switch
+- The git switch command was introduced in Git 2.23 as a way to split and clarify the two different uses of git checkout: switching branches and restoring files. The idea behind this move is to let people use git switch for switching branches and git restore for undoing changes from a commit.
+- git switch <branch>
+- This command will change your current branch to the one specified by <branch>. If the branch does not exist locally, it will try to find it on the remote repository and create a local copy
+- Create a new branch and switch to it  git switch -c feature2
+- Switch to a specific commit without creating a new branch git switch --detach 1234567
+- Merge current branch into master before switching to it git switch -m master
+- Force-switch to another branch and discard any uncommitted changes  git switch -f feature3
+- git switch [<options>] (-c|-C) <new-branch> [<start-point>] :create new one and checkout
+- You can also use git stash to save your changes temporarily and restore them later
+## git branch
+- git branch hello-world-images create new one
+- git branch :list
+ex
+```
+$ git clone git://git.kernel.org/pub/scm/.../linux-2.6 my2.6(folder into which to lone)
+$ cd my2.6
+$ git branch my2.6.14(branch name to create) v2.6.14( name of the tag or commit from which the new branch )   (1)
+$ git switch my2.6.14
+```
+## git checkout
+-  used to navigate between branches, restore files, create new branches, and update submodules
+- switch to an existing branch:git checkout <branch> 
+- create a new branch based on current branch:git checkout -b feature2
+- reate or reset a branch and switch to it(f you want to create or reset a branch called feature3 based on master and switch to it):git checkout -B feature3 master
+- Create a new branch that tracks a remote branch and switch to it(If you want to create a new branch that tracks a remote branch called feature4 and switch to it):git checkout -t feature4
+## git guide
+- https://github.com/git-guides/git-remote
+## git pull 
+- rebase
+- before
+```
+Local main branch:       A - B
+Remote origin/main:      C - D
+```
+-after
+```
+Local main branch:       C - D - A' - B'
+Remote origin/main:      C - D
+```
+- 1. Reset and Pull
+- If you are sure you want to discard your local changes and match the remote branch exactly, you can use a combination of git fetch and git reset --hard
+```
+git fetch origin
+git reset --hard origin/main
+```
+- 2. Stash and Pull
+- If you want to temporarily save your local changes, pull the latest changes, and then reapply your local changes, you can use git stash:
+```
+git stash
+git pull
+git stash pop
+```
+## git reset
+```
+Undo A git pull
+To effectively "undo" a git pull, you cannot undo the git fetch – but you can undo the git merge that changed your local working branch.
+To do this, you will need to git reset to the commit you made before you merged. You can find this commit by searching the git reflog. The reflog is a log of every place that HEAD has pointed – every place that you have ever been checked out to. This reflog is only kept for 30 to 90 days, depending on the commit, and is only stored locally. (The reflog is a great reason not to delete a repository if you think you've made a mistake!)
+Run git reflog and search for the commit that you would like to return to. Then, run git reset --hard <SHA> to reset HEAD and your current branch to the SHA of the commit from before the merge.
+Force git pull to Overwrite Local Files
+If you have made commits locally that you regret, you may want your local branch to match the remote branch without saving any of your work. This can be done using git reset. First, make sure you have the most recent copy of that remote tracking branch by fetching.
+git fetch <remote> <branch>
+ex: git fetch origin main
+Then, use git reset --hard to move the HEAD pointer and the current branch pointer to the most recent commit as it exists on that remote tracking branch.
+git reset --hard <remote>/<branch>
+ex: git reset --hard origin/main
+```
